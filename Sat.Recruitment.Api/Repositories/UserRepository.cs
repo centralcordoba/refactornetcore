@@ -36,10 +36,10 @@ namespace Sat.Recruitment.Api.Repositories
                         Money = decimal.Parse(line.Split(',')[5].ToString()),
                     };
                     
-                    //var save = await _unitOfWork.Context.Set<T>().AllAsync(userDB);
+                    var save = await _unitOfWork.Context.Set<User>().AllAsync(userDB);
 
-                    //if (save != null)
-                    //    created = true;
+                    if (save != null)
+                      created = true;
                 }
                 reader.Close();
             }
